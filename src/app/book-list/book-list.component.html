@@ -1,0 +1,12 @@
+<h1>Welcome to the Book Shelf App</h1>
+
+<h4>Add a book to your library:</h4>
+
+Title: <input type="text" [(ngModel)]="theTitle" />
+Author: <input type="text" [(ngModel)]="theAuthor" />
+Pub. Year <input type="number" [(ngModel)]="thePublicationYear" />
+<button (click)="addBook()">Save Book</button><br /><br />
+
+<ng-container *ngFor="let theBook of books">
+    <app-book [book]="theBook" (deleted)="onDelete($event)"></app-book>
+</ng-container>
